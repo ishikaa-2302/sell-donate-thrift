@@ -1,0 +1,42 @@
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <title>Sell | Donate | Thrift</title>
+    </head>
+    <style media="screen">
+      body {
+        display: flex;
+        margin: 10%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+      }
+    </style>
+    <body class="bg-dark">
+        <div id="sawo-container" style="height: 300px; width: 300px;"></div>
+        <div id="status"></div>
+        <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
+        <script>
+            var config = {
+                containerID: "sawo-container",
+                identifierType: "phone_number_sms", // can be either 'email' or 'phone_number_sms'
+                apiKey: "25636f26-ec60-4760-8956-faa61a6ed120", // add your api key here
+                onSuccess: (payload) => {
+                    document.getElementById("status").innerHTML =
+                        "Login Success";
+                        window.location.href="explore.html"
+                },
+            };
+            var sawo = new Sawo(config);
+            sawo.showForm();
+        </script>
+    </body>
+</html>
